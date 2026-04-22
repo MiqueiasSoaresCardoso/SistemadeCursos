@@ -6,22 +6,24 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Curso {
+public class Aluno {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
-    private Integer cargaHoraria;
 
-    //Construtor vazio
-    public Curso() {
+    private String nome;
+    private String matricula;
+    private Integer idade;
+
+    public Aluno() {
     }
-    //Construtor com parâmetros
-    public Curso(Long id, String nome, Integer cargaHoraria) {
+
+    public Aluno(Long id, String nome, String matricula, Integer idade) {
         this.id = id;
         this.nome = nome;
-        this.cargaHoraria = cargaHoraria;
+        this.matricula = matricula;
+        this.idade = idade;
     }
 
     public Long getId() {
@@ -40,11 +42,19 @@ public class Curso {
         this.nome = nome;
     }
 
-    public Integer getCargaHoraria() {
-        return cargaHoraria;
+    public String getMatricula() {
+        return matricula;
     }
 
-    public void setCargaHoraria(Integer cargaHoraria) {
-        this.cargaHoraria = cargaHoraria;
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public Integer getIdade() {
+        return idade;
+    }
+
+    public void setIdade(Integer idade) {
+        this.idade = idade;
     }
 }
