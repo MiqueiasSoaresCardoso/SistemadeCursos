@@ -27,5 +27,18 @@ public class CursoController {
         return;
     }
 
+    @DeleteMapping("/remover")
+    //Remover Curso
+    public void deleteCurso(@RequestBody Curso c){
+        cursos.remove(c);
+    }
 
+    @PutMapping("editar")
+    //Editar Curso
+    public void editarCurso(@RequestBody Curso c){
+        //Primeiro eu apago o curso
+        cursos.remove(c);
+        //Depois adiciono novamente com a alteração
+        cursos.add(c);
+    }
 }
