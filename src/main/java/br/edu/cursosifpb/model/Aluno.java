@@ -5,6 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.util.Date;
+
 @Entity
 public class Aluno {
 
@@ -14,16 +16,16 @@ public class Aluno {
 
     private String nome;
     private String matricula;
-    private Integer idade;
+    private Date dataNascimento;
 
     public Aluno() {
     }
 
-    public Aluno(Long id, String nome, String matricula, Integer idade) {
+    public Aluno(Long id, String nome, String matricula, Date dataNascimento) {
         this.id = id;
         this.nome = nome;
         this.matricula = matricula;
-        this.idade = idade;
+        this.dataNascimento = dataNascimento;
     }
 
     public Long getId() {
@@ -50,11 +52,11 @@ public class Aluno {
         this.matricula = matricula;
     }
 
-    public Integer getIdade() {
-        return idade;
+    public Date getDataNascimento() {
+        return dataNascimento;
     }
 
-    public void setIdade(Integer idade) {
-        this.idade = idade;
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 }
