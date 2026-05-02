@@ -27,18 +27,21 @@ public class CursoController {
         return;
     }
 
-    @DeleteMapping("/remover")
+    @DeleteMapping("/remover/{id}")
     //Remover Curso
-    public void deleteCurso(@RequestBody Curso c){
-        cursos.remove(c);
+    public void deleteCurso(@PathVariable long id){
+        cursos.removeIf(curso -> curso.getId() == id);
     }
 
-    @PutMapping("editar")
+    @PutMapping("/editar/{id}")
     //Editar Curso
-    public void editarCurso(@RequestBody Curso c){
-        //Primeiro eu apago o curso
-        cursos.remove(c);
-        //Depois adiciono novamente com a alteração
-        cursos.add(c);
+    public void editarCurso(@PathVariable long id, @RequestBody Curso cursoatualizado){
+        for (Curso c : cursos){
+            if(c.getId() == id){
+                c.setNome(cursoatualizado.getNome());
+                c.setCargaHoraria(cursoatualizado.getCargaHoraria());
+                break;
+            }
+        }
     }
 }
