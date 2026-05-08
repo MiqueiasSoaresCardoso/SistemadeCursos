@@ -30,18 +30,11 @@ public class CursoController {
     @DeleteMapping("/remover/{id}")
     //Remover Curso
     public void deleteCurso(@PathVariable long id){
-        /*faz uma leitura na lista de cursos e verifica se
-        algum possui o mesmo id passado na URL, se possuir ele remove o curso
-         */
         cursos.removeIf(curso -> curso.getId() == id);
     }
 
     @DeleteMapping("/remover")
-    //Remover Curso
     public void deleteCursoversao02(@RequestParam long id){
-         /*faz uma leitura na lista de cursos e verifica se
-        algum possui o mesmo id passado na URL, se possuir ele remove o curso
-         */
         cursos.removeIf(curso -> curso.getId() == id);
     }
 

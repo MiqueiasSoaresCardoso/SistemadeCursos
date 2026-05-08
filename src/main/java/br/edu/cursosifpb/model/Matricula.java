@@ -17,22 +17,16 @@ public class Matricula {
     @JoinColumn(name = "curso_id")
     private Curso curso;
 
-    private Double nota1;
-    private Double nota2;
-    private Double nota3;
-    private Double media;
+    private int matricula;
+
 
     public Matricula() {
     }
 
-    public Matricula(Long id, Aluno aluno, Curso curso, Double nota1, Double nota2, Double nota3, Double media) {
+    public Matricula(Long id, Aluno aluno, Curso curso) {
         this.id = id;
         this.aluno = aluno;
         this.curso = curso;
-        this.nota1 = nota1;
-        this.nota2 = nota2;
-        this.nota3 = nota3;
-        this.media = media;
     }
 
     public Long getId() {
@@ -59,33 +53,11 @@ public class Matricula {
         this.curso = curso;
     }
 
-    public Double getNota1() {
-        return nota1;
+    public int getMatricula() {
+        return matricula;
+    }
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
     }
 
-    public void setNota1(Double nota1) {
-        this.nota1 = nota1;
-    }
-
-    public Double getNota2() {
-        return nota2;
-    }
-
-    public void setNota2(Double nota2) {
-        this.nota2 = nota2;
-    }
-    public Double getNota3() {
-        return nota3;
-    }
-    public void setNota3(Double nota3) {
-        this.nota3 = nota3;
-    }
-
-    public Double getMedia() {
-        return media;
-    }
-
-    public void setMedia(Double media) {
-        this.media = media;
-    }
 }
